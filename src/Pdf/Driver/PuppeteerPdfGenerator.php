@@ -121,6 +121,7 @@ class PuppeteerPdfGenerator implements PdfGeneratorInterface
             'pdf' => $format->toArray(),
         ];
         $browser = new Browser();
+        $browser->isDebug = true;
         $content = $browser->pdf($config);
 
         if (!is_string($content) || strlen($content) < 100) {
