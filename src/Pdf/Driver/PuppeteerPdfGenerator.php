@@ -122,7 +122,7 @@ class PuppeteerPdfGenerator implements PdfGeneratorInterface
         ];
         $browser = new Browser();
         $browser->isDebug = true;
-        $browser->path = $browser->path . ';XDG_CONFIG_HOME="$WORKSPACE@tmp/.chromium";XDG_CACHE_HOME="$WORKSPACE@tmp/.chromium";PUPPETEER_CACHE_DIR=/srv/3dprintcalculator.net/puppeteer/.cache';
+        $browser->path = $browser->path . ';XDG_CONFIG_HOME=/tmp/.chromium;XDG_CACHE_HOME=/tmp/.chromium;PUPPETEER_CACHE_DIR=/srv/3dprintcalculator.net/puppeteer/.cache';
         $content = $browser->pdf($config);
 
         if (!is_string($content) || strlen($content) < 100) {
