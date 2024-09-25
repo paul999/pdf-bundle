@@ -124,7 +124,7 @@ class PuppeteerPdfGenerator implements PdfGeneratorInterface
         $content = $browser->pdf($config);
 
         if (!is_string($content) || strlen($content) < 100) {
-            throw new PdfGenerationException();
+            throw new PdfGenerationException(json_encode($content));
         }
 
         return new Pdf($content);
