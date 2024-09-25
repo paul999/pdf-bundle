@@ -119,6 +119,7 @@ class PuppeteerPdfGenerator implements PdfGeneratorInterface
         $config = [
             'url' => "file://$filename",
             'pdf' => $format->toArray(),
+            'headless' => 'new',
         ];
         $browser = new Browser();
         $browser->isDebug = true;
